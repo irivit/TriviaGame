@@ -1,0 +1,51 @@
+body{
+    background-image: url("../images/Background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 16px;
+}
+
+.jumbotron{
+    background-color: rgba(229, 238, 240, 0.8);
+    text-align: center;
+    font-family: 'Aclonica', sans-serif;
+    height: 86%;
+    width: 86%;
+    margin: 5% auto;
+    padding: 2%;
+    align-self: center;
+
+}
+
+.container{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+}
+
+#answers0, #answers1, #answers2, #startAgain {
+    width: 96%;
+    text-align: center;
+}
+
+#form{
+    
+}
+
+#pic, #form{
+    margin: 2%;
+
+}
+
+.trivia{
+    margin-top: 5%;
+    font-size: 25px;
+}
+.enunciado{
+    margin-bottom: 5%;
+    font-size: 50px;
+}
+#timer{
+  margin-top: 0%;
+}
