@@ -86,7 +86,7 @@ var timeLaps = {   //objetc to control time
       clearInterval(intervalId);              //clear the interval
       displayOptions();                       //call to display next question
     } else {
-      alert('Fin del juego');                 //alert the end of the game
+      // alert('Fin del juego');                 //alert the end of the game
       timeLaps.stop();                        //stop the timer
       $('#form').empty();                     //clean the childs of the element form
       $('#timer').empty();                    //clean the childs of the element timer
@@ -212,6 +212,10 @@ function listenToClick() {   //this function is in charge of listen to click
   $("#answers0").click(function (event) {
 
     clicked = true; //Flag to control if user clicked on any button
+   
+    $("#answers0").attr("disabled", "true");
+    $("#answers1").attr("disabled", "true");
+    $("#answers2").attr("disabled", "true");
 
     var selectedAnswer = $('#answers0').text();  //capture in a variable the text of the button
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {   //compare the correct answer with the user answer  => if correct
@@ -231,6 +235,10 @@ function listenToClick() {   //this function is in charge of listen to click
   $("#answers1").click(function (event) {
 
     clicked = true; //Flag to control if user clicked on any button
+
+    // $("#answers0").attr("disabled", "true");
+    // $("#answers1").attr("disabled", "true");
+    // $("#answers2").attr("disabled", "true");
 
     var selectedAnswer = $('#answers1').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
@@ -252,6 +260,10 @@ function listenToClick() {   //this function is in charge of listen to click
   $("#answers2").click(function (event) {
 
     clicked = true; //Flag to control if user clicked on any button
+
+    // $("#answers0").attr("disabled", "true");
+    // $("#answers1").attr("disabled", "true");
+    // $("#answers2").attr("disabled", "true");
 
     var selectedAnswer = $('#answers2').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
