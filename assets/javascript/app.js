@@ -10,56 +10,65 @@ var soundCorrect = new Audio("./assets/sounds/correct.wav");  //var for correct 
 var soundWrong = new Audio("./assets/sounds/wrong.mp3");      //var for wrong answer
 
 var questions = [{              
-  image: './assets/images/1.jpg',              //url of the pic
-  choices: ["Perú", "Chile", "Bolivia"],       //possible answers 
-  correctAnswer: "Perú",                       //correct answer
+  image: './assets/images/0.jpg',              //url of the pic
+  choices: ["Seville", "Havana", "Rome"],       //possible answers 
+  correctAnswer: "Havana",                       //correct answer
+  explanation: "Havana Cathedral (The Cathedral of the Virgin Mary of the Immaculate Conception) is one of eleven Roman Catholic cathedrals on the island of Cuba. It is located in the Plaza de la Catedral in the center of Old Havana. The Jesuits began construction of the cathedral in 1748 on the site of an earlier church and it was completed in 1777."     //breve description of monument
+},
+{ image: './assets/images/1.jpg',              //url of the pic
+  choices: ["Peru", "Chile", "Bolivia"],       //possible answers 
+  correctAnswer: "Peru",                       //correct answer
   explanation: "Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred Valley, which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows."     //breve description of monument
 },
-{
-  image: "./assets/images/2.jpg",
-  choices: ["Sidney", "Singapur", "Reino Unido"],
-  correctAnswer: "Sidney",
-  explanation: "La Opera House es el emblema de Sidney y está situada justo a la orilla de la bahía de la ciudad. Diseñada por el arquitecto danés Jørn Utzon, en su inauguración en 1973 contó con la presencia de la reina Isabel II."
+{ image: "./assets/images/2.jpg",
+  choices: ["Sydney", "Singapore", "United Kingdom"],
+  correctAnswer: "Sydney",
+  explanation: "The Opera House is the emblem of Sydney and is located right on the edge of the city bay. Designed by the Danish architect Jørn Utzon, it was inaugurated in 1973 and was attended by Queen Elizabeth II."
 },
 { image: "./assets/images/3.jpg",
-  choices: ["Vermont", "Texas", "Dakota del Sur"],
-  correctAnswer: "Dakota del Sur",
-  explanation: "El Monumento Nacional Monte Rushmore se encuentra situado en una montaña de Keystone, en Dakota del Sur. En él están esculpidos los rostros de los expresidentes americanos George Washington, Tomas Jefferson, Theodore Roosevelt y Abraham Lincoln."
+  choices: ["Vermont", "Texas", "South Dakota"],
+  correctAnswer: "South Dakota",
+  explanation: "The Mount Rushmore National Monument is located on a mountain in Keystone, South Dakota. The faces of the American ex-presidents George Washington, Thomas Jefferson, Theodore Roosevelt and Abraham Lincoln are sculpted."
 },
   { image: "./assets/images/4.jpg",
-  choices: ["India", "Birmania", "Camboya"],
-  correctAnswer: "Camboya",
-  explanation: "Angkor Wat es el templo más grande del asentamiento de Angkor, la antigua capital del Imperio jemer. Situado en Camboya, el país lo luce con orgullo en la imagen de su bandera."
+  choices: ["India", "Burma", "Cambodia"],
+  correctAnswer: "Cambodia",
+  explanation: "Angkor Wat is the largest temple in the settlement of Angkor, the former capital of the Khmer Empire. Located in Cambodia, the country proudly looks on the image of its flag."
   },
   { image: "./assets/images/5.jpg",
-  choices: ["Luxor", "El Cairo", "Nubia"],
-  correctAnswer: "El Cairo",
-  explanation: "Las famosas pirámides egipcias se encuentran en la Necrópolis de Gizeh, en la ciudad de El Cairo. La Gran pirámide de Gizeh es la única de las Siete Maravillas del Mundo Antiguo que aún sigue en pie."
+  choices: ["Luxor", "Cairo", "Nubia"],
+  correctAnswer: "Cairo",
+  explanation: "The famous Egyptian pyramids are found in the Necropolis of Giza, in the city of Cairo. The Great Pyramid of Gizeh is the only one of the Seven Wonders of the Ancient World that still stands today."
   },
   { image: "./assets/images/6.jpg",
-  choices: ["Nueva York", "Washington", "Los Ángeles"],
-  correctAnswer: "Nueva York",
-  explanation: "El Rockefeller Center es un complejo de 19 edificios situados en Nueva York, entre la Quinta y la Sexta Avenida. Es conocido por sus increíbles vistas a Central Park, los estudios de televisión que alberga y porque su árbol de Navidad es el primero que se enciende en toda la ciudad."
-  },
-  { image: "./assets/images/7.jpg",
-  choices: ["Perú", "México", "Chile"],
-  correctAnswer: "México",
-  explanation: "Chichén Itzá es el yacimiento arqueológico más importante de Yucatán, México. De hecho es la ciudad maya mejor conservada y la más impresionante de la ruta de Yucatán, que también incluye Uxmal, Tulum y Ek Balam. Fue levantado por los mayas y actualmente es uno de los lugares más turísticos del país."
-  },
-  { image: "./assets/images/8.jpg",
-  choices: ["Nueva York", "Washington", "Los Ángeles"],
-  correctAnswer: "Nueva York",
-  explanation: "El Rockefeller Center es un complejo de 19 edificios situados en Nueva York, entre la Quinta y la Sexta Avenida. Es conocido por sus increíbles vistas a Central Park, los estudios de televisión que alberga y porque su árbol de Navidad es el primero que se enciende en toda la ciudad."
-  },
-  { image: "./assets/images/9.jpg",
-  choices: ["Nueva York", "Washington", "Los Ángeles"],
-  correctAnswer: "Nueva York",
-  explanation: "El Rockefeller Center es un complejo de 19 edificios situados en Nueva York, entre la Quinta y la Sexta Avenida. Es conocido por sus increíbles vistas a Central Park, los estudios de televisión que alberga y porque su árbol de Navidad es el primero que se enciende en toda la ciudad."
+  choices: ["New York", "Washington", "Los Angeles"],
+  correctAnswer: "New York",
+  explanation: "The Rockefeller Center is a complex of 19 buildings located in New York, between Fifth and Sixth Avenue. It is known for its incredible views of Central Park, the television studios that it houses and because its Christmas tree is the first one that lights up throughout the city."
   },
   { image: "./assets/images/10.jpg",
-  choices: ["Nueva York", "Washington", "Los Ángeles"],
-  correctAnswer: "Nueva York",
-  explanation: "El Rockefeller Center es un complejo de 19 edificios situados en Nueva York, entre la Quinta y la Sexta Avenida. Es conocido por sus increíbles vistas a Central Park, los estudios de televisión que alberga y porque su árbol de Navidad es el primero que se enciende en toda la ciudad."
+  choices: ["Peru", "Mexico", "Chile"],
+  correctAnswer: "Mexico",
+  explanation: "Chichen Itza is the most important archaeological site in Yucatan, Mexico. In fact it is the best preserved and most impressive Mayan city on the Yucatan route, which also includes Uxmal, Tulum and Ek Balam. It was built by the Mayans and is currently one of the most touristic places in the country."
+  },
+  { image: "./assets/images/9.jpg",
+  choices: ["Cuba", "Poland", "Brazil"],
+  correctAnswer: "Brazil",
+  explanation: "The Christ the Redeemer on the hill of Corcovado is the best-known image of Rio de Janeiro, Brazil. The sculpture, considered one of the new wonders of the world, measures 38 meters in height."
+  },
+  { image: "./assets/images/7.jpg",
+  choices: ["Prague", "Budapest", "Paris"],
+  correctAnswer: "Budapest",
+  explanation: "The Chain Bridge is the symbol of Budapest. It dates from 1849, although during the Second World War it suffered great damage and had to be rebuilt. It was the first bridge of the city and its objective was to unite the ancient cities of Buda and Pest. The Hammersmith Bridge in London was modeled on its construction."
+  },
+  { image: "./assets/images/8.jpg",
+  choices: ["St. Petersburg "," Minsk ","Moscow"],
+  correctAnswer: "Moscow",
+  explanation: "St. Basil's Cathedral is one of the best-known images of Moscow. It is located in the Red Square and draws attention for its colorful domes."
+  },
+  { image: "./assets/images/11.jpg",
+  choices: ["Cuba", "United States", "France"],
+  correctAnswer: "Cuba",
+  explanation: "El Capitolio, or National Capitol Building in Havana, Cuba, was the organization of government in Cuba until after the Cuban Revolution in 1959, and is now home to the Cuban Academy of Sciences. Its design is compared to that of the United States Capitol, but is not a replica of it. Completed in 1929, it was the tallest building in Havana until the 1950s and houses the world's third largest indoor statue."
   },]
 
 
@@ -85,6 +94,14 @@ var timeLaps = {   //objetc to control time
       $('#form').html("<h2>You have hit: " + wins + " answers and you have lost: " + losses + " answers</h2><br/>"); //create a new text where inform to user how many question answer correct and wrong
       $('#form').append(`<div><a id = "startAgain" class="btn btn-primary btn-lg" href="#" role="button">Start again </a></div><br/>`); //add a new button to start the game again
 
+      $("#startAgain").click(function (event) {  //listen to click the button to stat the game again
+
+        actualQuestion = 0;   //reset the index of the array
+        playing = true;       //restar the flag to start the game again
+    
+        displayOptions();     //call to display the first question
+       
+      });
     }
 
   },
@@ -217,18 +234,17 @@ function listenToClick() {   //this function is in charge of listen to click
 
     var selectedAnswer = $('#answers1').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
-      soundCorrect.play();
-      wins++;
-      timeLaps.stop();
-      alert('correct');
-      timeLaps.reset();
+      soundCorrect.play();    //call to the correct sound 
+      wins++;                 //increment the wins
+      explanation();          //call to explanation function
+      timeLaps.stop();        //call to stop the timer
 
     }
     else {
-      losses++;
-      soundWrong.play();
-      timeLaps.stop();
-      timeLaps.reset();
+      losses++;              // increment the losses
+      soundWrong.play();     //call to the wrong sound 
+      timeLaps.stop();       //call to stop the timer
+      timeLaps.reset();      //call to reset the game
 
     }
   });
@@ -239,30 +255,21 @@ function listenToClick() {   //this function is in charge of listen to click
 
     var selectedAnswer = $('#answers2').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
-      soundCorrect.play();
-      explanation();
-      wins++;
-      timeLaps.stop();
-      alert('correct');
-      timeLaps.reset();
-
+      soundCorrect.play();    //call to the correct sound 
+      wins++;                 //increment the wins
+      explanation();          //call to explanation function
+      timeLaps.stop();        //call to stop the timer
     }
     else {
-      losses++;
-      soundWrong.play();
-      timeLaps.stop();
-      alert("wrong answer!");
-      timeLaps.reset();
+      losses++;              // increment the losses
+      soundWrong.play();     //call to the wrong sound 
+      timeLaps.stop();       //call to stop the timer
+      timeLaps.reset();      //call to reset the game
 
     }
   });
 
-  $("#startAgain").click(function (event) {  //listen to click the button to stat the game again
 
-    actualQuestion = 0;   //reset the index of the array
-    displayOptions();     //call to display the first question
-
-  });
 
 }
 
