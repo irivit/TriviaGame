@@ -18,7 +18,7 @@ var questions = [{
 { image: './assets/images/1.jpg',              //url of the pic
   choices: ["Peru", "Chile", "Bolivia"],       //possible answers 
   correctAnswer: "Peru",                       //correct answer
-  explanation: "Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the Sacred Valley, which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows."     //breve description of monument
+  explanation: "Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above sea level. It is located in the Cusco Region in Peru, above the Sacred Valley, which is 80 kilometres (50 mi) northwest of Cusco and near the Urubamba River."     //breve description of monument
 },
 { image: "./assets/images/2.jpg",
   choices: ["Sydney", "Singapore", "United Kingdom"],
@@ -38,27 +38,27 @@ var questions = [{
   { image: "./assets/images/5.jpg",
   choices: ["Luxor", "Cairo", "Nubia"],
   correctAnswer: "Cairo",
-  explanation: "The famous Egyptian pyramids are found in the Necropolis of Giza, in the city of Cairo. The Great Pyramid of Gizeh is the only one of the Seven Wonders of the Ancient World that still stands today."
+  explanation: "The famous Egyptian pyramids are found in the Necropolis of Giza, in the city of Cairo. The Great Pyramid of Gizeh is the only one of the Seven Wonders of the ancient world that still stands today."
   },
   { image: "./assets/images/6.jpg",
   choices: ["New York", "Washington", "Los Angeles"],
   correctAnswer: "New York",
-  explanation: "The Rockefeller Center is a complex of 19 buildings located in New York, between Fifth and Sixth Avenue. It is known for its incredible views of Central Park, the television studios that it houses and because its Christmas tree is the first one that lights up throughout the city."
+  explanation: "The Rockefeller Center is a complex of 19 buildings located in New York, between Fifth and Sixth Avenues. It is known for its incredible views of Central Park. It houses many television studios and during Christmas a famous Christmas tree lights up the city."
   },
   { image: "./assets/images/10.jpg",
   choices: ["Peru", "Mexico", "Chile"],
   correctAnswer: "Mexico",
-  explanation: "Chichen Itza is the most important archaeological site in Yucatan, Mexico. In fact it is the best preserved and most impressive Mayan city on the Yucatan route, which also includes Uxmal, Tulum and Ek Balam. It was built by the Mayans and is currently one of the most touristic places in the country."
+  explanation: "Chichen Itza is the most important archaeological site in Yucatan, Mexico. In fact it is the best preserved and most impressive Mayan city on the Yucatan route, which also includes Uxmal, Tulum and Ek Balam. It was built by the Mayans and is currently one of the most visited places in the country."
   },
   { image: "./assets/images/9.jpg",
   choices: ["Cuba", "Poland", "Brazil"],
   correctAnswer: "Brazil",
-  explanation: "The Christ the Redeemer on the hill of Corcovado is the best-known image of Rio de Janeiro, Brazil. The sculpture, considered one of the new wonders of the world, measures 38 meters in height."
+  explanation: "The Christ the Redeemer sits on the hill of Corcovado. It is the best-known image of Rio de Janeiro, Brazil. The sculpture which is considered one of the new wonders of the world, measures 38 meters in height."
   },
   { image: "./assets/images/7.jpg",
   choices: ["Prague", "Budapest", "Paris"],
   correctAnswer: "Budapest",
-  explanation: "The Chain Bridge is the symbol of Budapest. It dates from 1849, although during the Second World War it suffered great damage and had to be rebuilt. It was the first bridge of the city and its objective was to unite the ancient cities of Buda and Pest. The Hammersmith Bridge in London was modeled on its construction."
+  explanation: "The Chain Bridge is the symbol of Budapest. It dates from 1849, although during the Second World War it suffered great damage and had to be rebuilt. It was the first bridge of the city and its objective was to unite the ancient cities of Buda and Pest. The Hammersmith Bridge in London was modeled on The Chain Bridge."
   },
   { image: "./assets/images/8.jpg",
   choices: ["St. Petersburg "," Minsk ","Moscow"],
@@ -68,9 +68,8 @@ var questions = [{
   { image: "./assets/images/11.jpg",
   choices: ["Cuba", "United States", "France"],
   correctAnswer: "Cuba",
-  explanation: "El Capitolio, or National Capitol Building in Havana, Cuba, was the organization of government in Cuba until after the Cuban Revolution in 1959, and is now home to the Cuban Academy of Sciences. Its design is compared to that of the United States Capitol, but is not a replica of it. Completed in 1929, it was the tallest building in Havana until the 1950s and houses the world's third largest indoor statue."
+  explanation: "El Capitolio, or National Capitol Building in Havana, Cuba, was the sit of government in Cuba until after the Cuban Revolution in 1959, and is now home to the Cuban Academy of Sciences. Its design is compared to that of the United States Capitol, but is not a replica. Completed in 1929, it was the tallest building in Havana until the 1950s and houses the world's third largest indoor statue."
   },]
-
 
 var timeLaps = {   //objetc to control time
 
@@ -130,6 +129,7 @@ var timeLaps = {   //objetc to control time
     timeLaps.stop();               //call stop the time
     setTimeout(function () {
       playing = true;              //reset the playing flag to true to keep playing
+      
       timeLaps.reset();            
 
     }, delayInMilliseconds);
@@ -180,9 +180,7 @@ var timeLaps = {   //objetc to control time
 };
 
 function explanation() {   //This function display a breve description of the monument
-  var explanat = '';
-  explanat += `<div><p>` + questions[actualQuestion].explanation + `</p></div>`;  //create the div dinamicaly
-  $('#form').append(explanat);  //show the description at the end of the form
+  $('#form').append(`<div><p>` + questions[actualQuestion].explanation + `</p></div>`);  //show the description at the end of the form
   timeLaps.delay();   //call to delay to give time to user for read the description.
 }
 
@@ -221,6 +219,7 @@ function listenToClick() {   //this function is in charge of listen to click
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {   //compare the correct answer with the user answer  => if correct
       soundCorrect.play();    //call to the correct sound 
       wins++;                 //increment the wins
+      $("#form").empty();
       explanation();          //call to explanation function
       timeLaps.stop();        //call to stop the timer
     }
@@ -236,14 +235,11 @@ function listenToClick() {   //this function is in charge of listen to click
 
     clicked = true; //Flag to control if user clicked on any button
 
-    // $("#answers0").attr("disabled", "true");
-    // $("#answers1").attr("disabled", "true");
-    // $("#answers2").attr("disabled", "true");
-
     var selectedAnswer = $('#answers1').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
       soundCorrect.play();    //call to the correct sound 
       wins++;                 //increment the wins
+      $("#form").empty();
       explanation();          //call to explanation function
       timeLaps.stop();        //call to stop the timer
 
@@ -261,14 +257,11 @@ function listenToClick() {   //this function is in charge of listen to click
 
     clicked = true; //Flag to control if user clicked on any button
 
-    // $("#answers0").attr("disabled", "true");
-    // $("#answers1").attr("disabled", "true");
-    // $("#answers2").attr("disabled", "true");
-
     var selectedAnswer = $('#answers2').text();
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {
       soundCorrect.play();    //call to the correct sound 
       wins++;                 //increment the wins
+      $("#form").empty();
       explanation();          //call to explanation function
       timeLaps.stop();        //call to stop the timer
     }
@@ -277,6 +270,7 @@ function listenToClick() {   //this function is in charge of listen to click
       soundWrong.play();     //call to the wrong sound 
       timeLaps.stop();       //call to stop the timer
       timeLaps.reset();      //call to reset the game
+
 
     }
   });
