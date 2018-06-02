@@ -203,6 +203,7 @@ function displayOptions() { //this function display the image and the possible a
 
 
   listenToClick();  //call this function to listen to click
+  clicked = false;
 };
 
 function listenToClick() {   //this function is in charge of listen to click
@@ -211,9 +212,7 @@ function listenToClick() {   //this function is in charge of listen to click
 
     clicked = true; //Flag to control if user clicked on any button
    
-    $("#answers0").attr("disabled", "true");
-    $("#answers1").attr("disabled", "true");
-    $("#answers2").attr("disabled", "true");
+
 
     var selectedAnswer = $('#answers0').text();  //capture in a variable the text of the button
     if (selectedAnswer === questions[actualQuestion].correctAnswer) {   //compare the correct answer with the user answer  => if correct
